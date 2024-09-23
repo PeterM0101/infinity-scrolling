@@ -7,7 +7,7 @@ export const queryClient = new QueryClient()
 export default function App({ Component, pageProps }: AppProps) {
 
   return <QueryClientProvider client={queryClient}>
-    <GoogleTagManager gtmId='GTM-TNSKLJP7' />
+    <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID as string} />
     <Component {...pageProps} />
   </QueryClientProvider>;
 }
